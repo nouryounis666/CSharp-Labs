@@ -169,6 +169,7 @@
             static void ArrayCalculations()
             {
                 int[] numbers = new int[5];
+                Console.WriteLine("Enter 5 integers for calculations:\n");
 
                 for (int i = 0; i < numbers.Length; i++)
                 {
@@ -176,31 +177,10 @@
                     numbers[i] = Convert.ToInt32(Console.ReadLine());
                 }
 
-                int sum = 0;
-                int max = numbers[0];
-                int min = numbers[0];
-
-                for (int i = 0; i < numbers.Length; i++)
-                {
-                    sum += numbers[i];
-
-                    if (numbers[i] > max)
-                    {
-                        max = numbers[i];
-                    }
-
-                    if (numbers[i] < min)
-                    {
-                        min = numbers[i];
-                    }
-                }
-
-                double average = (double)sum / numbers.Length;
-
-                Console.WriteLine($"\nSum = {sum}");
-                Console.WriteLine($"Average = {average}");
-                Console.WriteLine($"Largest Number = {max}");
-                Console.WriteLine($"Minimum Number = {min}");
+                Console.WriteLine($"\nSum = {numbers.Sum()}");
+                Console.WriteLine($"Average = {numbers.Average()}");
+                Console.WriteLine($"Largest Number = {numbers.Max()}");
+                Console.WriteLine($"Minimum Number = {numbers.Min()}");
             }
             #endregion
         }
